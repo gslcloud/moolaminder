@@ -1,0 +1,21 @@
+```javascript
+const express = require('express');
+const app = express();
+const userRoutes = require('./routes/user');
+
+// Middleware
+app.use(express.json());
+
+// Routes
+app.use('/users', userRoutes);
+
+module.exports = app;
+```
+
+This code sets up the main application file that configures the Express server. It imports the `express` module and creates an instance of the Express application.
+
+The `express.json()` middleware is used to parse the request body as JSON, allowing for easy access to the data sent in the request.
+
+The code also imports the user routes from the `./routes/user` file and sets up the route handling by using the `app.use()` method. This means that any routes starting with "/users" will be handled by the user routes defined in `userRoutes`.
+
+Finally, the `app` instance is exported to be used by other parts of the application.
